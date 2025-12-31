@@ -1,11 +1,14 @@
 import React from 'react'
 import UserDetails from './UserDetails'
+import { UserContextProvider } from './Contex/Context Api/User-Context-Provider'
 
 const App = () => {
   return (
-    <div>
-      <UserDetails/>
-    </div>
+   <>
+   <UserContextProvider>
+      <UserDetails/>  
+   </UserContextProvider>
+   </>
   )
 }
 

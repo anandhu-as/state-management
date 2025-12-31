@@ -1,18 +1,21 @@
-import React, { useEffect } from "react";
+import React, { useContext, useEffect } from "react";
 import { useState } from "react";
+import { UserContext } from "./Contex/Context Api/User-Context-Provider";
 const UserDetails = () => {
-  //using usestate
-  const [user, setUser] = useState(null);
-  const x = 3000;
-  const login = () => {
-    const timer = setTimeout(() => {
-      setUser({ name: "anandhu", email: "anandhu@gmail.com" });
-    }, x);
+  //useState
+  //const [user, setUser] = useState(null);
+  // const x = 3000;
+  // const login = () => {
+  //const timer = setTimeout(() => {
+  // setUser({ name: "anandhu", email: "anandhu@gmail.com" });
+  //}, x);
 
-    return () => clearTimeout(timer);
-  };
+  //return () => clearTimeout(timer);
+  //};
 
-  const logout = () => setUser(null);
+  //const logout = () => setUser(null);
+  const { login, logout, user } = useContext(UserContext);
+
   return (
     <div>
       {user ? (
